@@ -1,0 +1,49 @@
+body {
+  text-align: center;
+}
+
+/* Basic button style */
+.button {
+  height: 200px;
+  width: 200px;
+  border-radius: 20%;
+  border: 10px solid black;
+  margin: 3rem;
+  transition: background-color 0.08s ease-in-out; 
+}
+
+/* Layout container for buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Button colors */
+.orange {
+  background-color: #f99b45;
+}
+.rose {
+  background-color: #d95980;
+}
+.softblue {
+  background-color: #819ff9;
+}
+.teal {
+  background-color: #63aac0;
+}
+
+/* Flash effect when system plays sequence */
+.flash {
+  background-color: white;
+}
+
+/* Flash effect when user clicks button */
+.userflash {
+  background-color: greenyellow;
+}
+
+/* Red background flash for wrong answer */
+body.wrong-flash {
+  background-color: red;
+  transition: background-color 0.2s;
+}
