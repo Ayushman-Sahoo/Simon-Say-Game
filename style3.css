@@ -1,24 +1,29 @@
+/* Center all content */
 body {
   text-align: center;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
 }
 
-/* Basic button style */
+/* Style for game buttons */
 .button {
   height: 200px;
   width: 200px;
   border-radius: 20%;
   border: 10px solid black;
   margin: 3rem;
-  transition: background-color 0.08s ease-in-out; 
+  transition: background-color 0.08s ease-in-out, box-shadow 0.2s;
 }
 
-/* Layout container for buttons */
+/* Arrange buttons in a line and wrap for smaller screens */
 .button-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Button colors */
+/* Button colors (light mode) */
 .orange {
   background-color: #f99b45;
 }
@@ -34,16 +39,92 @@ body {
 
 /* Flash effect when system plays sequence */
 .flash {
-  background-color: white;
+  background-color: white !important;
+  box-shadow: 0 0 25px white;
 }
 
-/* Flash effect when user clicks button */
+/* Flash effect when user clicks the button */
 .userflash {
-  background-color: greenyellow;
+  background-color: greenyellow !important;
+  box-shadow: 0 0 25px greenyellow;
 }
 
-/* Red background flash for wrong answer */
+/* Flash red when user makes a wrong choice */
 body.wrong-flash {
-  background-color: red;
+  background-color: red !important;
   transition: background-color 0.2s;
+}
+
+/* ========== Dark Mode Styles ========== */
+
+/* Dark background and white text */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+/* Change button borders in dark mode */
+body.dark .button {
+  border-color: white;
+}
+
+/* Dark mode adjusted button colors */
+body.dark .orange {
+  background-color: #ff9933;
+}
+body.dark .rose {
+  background-color: #cc6680;
+}
+body.dark .softblue {
+  background-color: #6b8df0;
+}
+body.dark .teal {
+  background-color: #4ca0b0;
+}
+
+/* Flash effect in dark mode (override .flash) */
+body.dark .flash {
+  background-color: #f0f0f0 ;
+  box-shadow: 0 0 25px #f0f0f0;
+  color: black ; 
+}
+
+/* Flash effect for user click in dark mode */
+body.dark .userflash {
+  background-color: #adff2f ;
+  box-shadow: 0 0 25px #adff2f;
+}
+
+.switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Makes the whole label clickable */
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  transition: filter 0.3s ease;
+  filter: brightness(0); /* dark icon on light mode */
+}
+
+body.dark .toggle-icon {
+  filter: brightness(1000%); /* light icon on dark mode */
+}
+
+#timer {
+  position: absolute;
+  top: 1.5rem; /* just below dark mode toggle */
+  right: 1rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+body.dark #timer {
+  color: #ccc;
 }
