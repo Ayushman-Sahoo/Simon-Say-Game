@@ -8,18 +8,23 @@
 </head>
 <body>
   <h1>Simon Says Game</h1>
-  <h2>Press any key to start the game</h2>
-  <h3 id="score">Score: 0</h3>             <!-- Current Score -->
-  <h4 id="high-score">High Score: 0</h4>   <!-- Stored High Score -->
-
+<h2>Press any key to start the game</h2>
+<h3 id="score">Score: 0</h3>
+<h4 id="high-score">High Score: 0</h4>
+<!-- Dark Mode Toggle Label Without Checkbox -->
+<label class="switch" id="darkModeToggle">
+  <img src="brightness-and-contrast.png" alt="Toggle Theme" class="toggle-icon" id="darkIcon">
+  Dark Mode
+</label>
+<h5 id="timer">Time Left: 5s</h5>
   <div class="button-container">
     <div class="line-one">
-      <div class="button rose" type="button" id="rose">1</div>
-      <div class="button orange" type="button" id="orange">2</div>
+      <div class="button rose" id="rose">1</div>
+      <div class="button orange" id="orange">2</div>
     </div>
     <div class="line-two">
-      <div class="button teal" type="button" id="teal">3</div>
-      <div class="button softblue" type="button" id="softblue">4</div>
+      <div class="button teal" id="teal">3</div>
+      <div class="button softblue" id="softblue">4</div>
     </div>
   </div>
 
